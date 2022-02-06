@@ -1,4 +1,43 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Hotel } from './hotels.entity';
 
 @Injectable()
-export class HotelsService {}
+export class HotelsService {
+  constructor(@InjectRepository(Hotel) private repo: Repository<Hotel>) {}
+
+  find() {
+    return this.repo.find();
+  }
+
+  findOne(id: number) {
+    return this.repo.findOne(id);
+  }
+
+  create(name: string, stars: number, address: string) {
+    const newHotel = this.repo.create({ name, stars, address });
+
+    return this.repo.save(newHotel);
+  }
+
+  async update(id: number, attributes: Partial<Hotel>) {
+    const hotel = await this.findOne(id);
+    if (!hotel) {
+      throw new NotFoundException(`Hotel with id ${id} not found`);
+    }
+
+    Object.assign(hotel, attributes);
+
+    return this.repo.save(hotel);
+  }
+
+  async remove(id: number) {
+    const hotel = await this.findOne(id);
+    if (!hotel) {
+      throw new NotFoundException(`Hotel with id ${id} not found`);
+    }
+
+    return this.repo.remove(hotel);
+  }
+}

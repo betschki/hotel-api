@@ -1,6 +1,6 @@
 # Generic Hotel API
 
-Generic Hotel API for a basic hotel booking system created with NestJS and PostgreSQL.
+Generic Hotel API for a basic hotel booking system created with NestJS and SQLite.
 
 _(this is a hobby project to learn NestJS)_
 
@@ -18,13 +18,15 @@ _(this is a hobby project to learn NestJS)_
 
 ## ToDos
 
-- [ ] Develop `/hotels` route
+- [x] Develop `/hotels` route
+  - [ ] split `address` into address Object instead of string
 - [ ] Develop `/rooms` route
 - [ ] Develop `/rooms/categories` route
 - [ ] Develop `/reservations` route
 - [ ] Develop `/guests` route
 - [ ] Strategy for date availability checker
 - [ ] Integrate authentication
+- [ ] Connect with Webflow API (as database option)
 
 ## General info
 
