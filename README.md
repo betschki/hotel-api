@@ -1,73 +1,106 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# Generic Hotel API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Generic Hotel API for a basic hotel booking system created with NestJS and PostgreSQL.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+_(this is a hobby project to learn NestJS)_
 
-## Description
+## Table of contents
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- [Generic Hotel API](#generic-hotel-api)
+  - [Table of contents](#table-of-contents)
+  - [ToDos](#todos)
+  - [General info](#general-info)
+    - [Hotels](#hotels)
+    - [Room Categories](#room-categories)
+    - [Rooms](#rooms)
+    - [Guests](#guests)
+    - [Reservations](#reservations)
 
-## Installation
+## ToDos
 
-```bash
-$ npm install
-```
+- [ ] Develop `/hotels` route
+- [ ] Develop `/rooms` route
+- [ ] Develop `/rooms/categories` route
+- [ ] Develop `/reservations` route
+- [ ] Develop `/guests` route
+- [ ] Strategy for date availability checker
+- [ ] Integrate authentication
 
-## Running the app
+## General info
 
-```bash
-# development
-$ npm run start
+This project serves a simple hotel booking system API that includes the following aspects (CRUD):
 
-# watch mode
-$ npm run start:dev
+- **hotels** can be created, viewed, updated, and deleted
+- **room categories** can be created, viewed, updated, and deleted
+- **rooms** can be created, viewed, updated, and deleted
+- **guests** can be created, viewed, updated, and deleted
+- **reservations** can be created, viewed, updated, and deleted
 
-# production mode
-$ npm run start:prod
-```
+### Hotels
 
-## Test
+A hotel has basic information, such as:
 
-```bash
-# unit tests
-$ npm run test
+- id
+- hotel name
+- star rating
+- address
+- number of rooms (dynamic, based on rooms attached to hotel)
+- room categories (dynamic, based on room categories attached to hotel)
 
-# e2e tests
-$ npm run test:e2e
+### Room Categories
 
-# test coverage
-$ npm run test:cov
-```
+Room categories are always tied to a hotel. One room category can not have multiple hotels, but a hotel can have multiple room categories. The name of the room category is shown in the frontend of the booking system (and therefore what a guest books)
 
-## Support
+A room category has basic information, such as:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- id
+- hotel
+- name
+- number of rooms (dynamic, based on rooms attached to room category)
+- balcony [*true/false*]
+- baththub [*true/false*]
+- shower [*true/false*]
+- view _[*park, inland, sea view, partial sea view, sea front*]_
+- number of adults per room
+- number of children per room
+- price per night
 
-## Stay in touch
+### Rooms
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+A room is tied to a room category and a hotel. Rooms are identified by their room number. The room name (e.g. displayed in a booking frontend) derives from the room category, therefore an individual room has no name.
 
-## License
+A room has basic information, such as:
 
-Nest is [MIT licensed](LICENSE).
+- id (primary key in database)
+- room number (individual to the hotel's numbering system)
+- hotel
+- room category
+- size
+- smoking allowed [*true/false*]
+- pets allowed [*true/false*]
+
+### Guests
+
+Guests can have multiple reservations and have basic information, such as:
+
+- id
+- name
+- gender
+- preferred payment method
+- billing address
+- staff notes
+
+### Reservations
+
+Reservations are connected to guests, room categories, and rooms. When a guest makes a reservation, only a room categroy is assigned. Hotel staff can later on assign an individual room. One reservation can have multiple room (categories).
+
+Reservations have basic information, such as:
+
+- id
+- guest
+- hotel
+- room categories
+- rooms
+- arrival date
+- departure date
+- total price
