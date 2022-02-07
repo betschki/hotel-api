@@ -1,4 +1,5 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsObject, IsString } from 'class-validator';
+import { Address } from 'src/common/interfaces/address.interface';
 
 export class CreateHotelDto {
   @IsString()
@@ -7,6 +8,6 @@ export class CreateHotelDto {
   @IsNumber()
   stars: number;
 
-  @IsString()
-  address: string;
+  @IsObject()
+  address: Address;
 }

@@ -19,7 +19,7 @@ _(this is a hobby project to learn NestJS)_
 ## ToDos
 
 - [x] Develop `/hotels` route
-  - [ ] split `address` into address Object instead of string
+  - [x] split `address` into address Object instead of string
 - [ ] Develop `/rooms` route
 - [ ] Develop `/rooms/categories` route
 - [ ] Develop `/reservations` route

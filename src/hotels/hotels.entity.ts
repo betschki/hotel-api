@@ -1,3 +1,4 @@
+import { Address } from 'src/common/interfaces/address.interface';
 import {
   AfterInsert,
   AfterRemove,
@@ -18,8 +19,8 @@ export class Hotel {
   @Column()
   stars: number;
 
-  @Column()
-  address: string;
+  @Column('simple-json')
+  address: Address;
 
   @AfterInsert()
   logInsert() {

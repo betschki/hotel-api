@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Address } from 'src/common/interfaces/address.interface';
 import { Repository } from 'typeorm';
 import { Hotel } from './hotels.entity';
 
@@ -15,7 +16,7 @@ export class HotelsService {
     return this.repo.findOne(id);
   }
 
-  create(name: string, stars: number, address: string) {
+  create(name: string, stars: number, address: Address) {
     const newHotel = this.repo.create({ name, stars, address });
 
     return this.repo.save(newHotel);
