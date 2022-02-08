@@ -1,19 +1,30 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Address } from 'src/common/interfaces/address.interface';
+import { RoomsService } from 'src/rooms/rooms.service';
 import { Repository } from 'typeorm';
 import { Hotel } from './hotels.entity';
 
+interface HotelWithRooms extends Hotel {
+  rooms: number;
+}
+
 @Injectable()
 export class HotelsService {
-  constructor(@InjectRepository(Hotel) private repo: Repository<Hotel>) {}
+  constructor(
+    @InjectRepository(Hotel) private repo: Repository<Hotel>,
+    private roomsService: RoomsService,
+  ) {}
 
   find() {
     return this.repo.find();
   }
 
-  findOne(id: number) {
-    return this.repo.findOne(id);
+  async findOne(id: number) {
+    const hotel: any = await this.repo.findOne(id);
+    hotel.rooms = (await this.roomsService.findMany({ hotel: id })).length;
+
+    return hotel;
   }
 
   create(name: string, stars: number, address: Address) {
