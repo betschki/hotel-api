@@ -7,13 +7,14 @@ import { RoomsModule } from './rooms/rooms.module';
 import { ReservationsModule } from './reservations/reservations.module';
 import { GuestsModule } from './guests/guests.module';
 import { Hotel } from './hotels/hotels.entity';
+import { Room } from './rooms/rooms.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: [Hotel],
+      entities: [Hotel, Room],
       synchronize: true,
     }),
     HotelsModule,

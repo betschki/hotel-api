@@ -1,4 +1,5 @@
 import { Address } from 'src/common/interfaces/address.interface';
+import { Room } from 'src/rooms/rooms.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -6,6 +7,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
