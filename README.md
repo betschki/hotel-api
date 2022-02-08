@@ -21,7 +21,7 @@ _(this is a hobby project to learn NestJS)_
 - [x] Develop `/hotels` route
   - [x] split `address` into address Object instead of string
     - [ ] implement `<Partial>` for address Object
-  - [ ] implement `/:id/rooms` after basic `/rooms` route is created
+  - [x] implement `/:id/rooms` after basic `/rooms` route is created
   - [ ] implement `/:id/roomCategories` after basic `/rooms` route is created
 - [x] Develop `/rooms` route
 - [ ] Develop `/rooms/categories` route

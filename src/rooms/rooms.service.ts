@@ -12,6 +12,10 @@ export class RoomsService {
     return this.repo.find();
   }
 
+  findMany(params: Partial<Room>) {
+    return this.repo.find(params);
+  }
+
   async findOne(id) {
     const room = await this.repo.findOne(id);
     if (!room) {

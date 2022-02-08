@@ -7,13 +7,17 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { RoomsService } from 'src/rooms/rooms.service';
 import { CreateHotelDto } from './dtos/create-hotel.dto';
 import { UpdateHotelDto } from './dtos/update-hotel.dto';
 import { HotelsService } from './hotels.service';
 
 @Controller('/hotels')
 export class HotelsController {
-  constructor(private hotelService: HotelsService) {}
+  constructor(
+    private hotelService: HotelsService,
+    private roomsService: RoomsService,
+  ) {}
 
   @Get()
   getHotels() {
@@ -23,6 +27,11 @@ export class HotelsController {
   @Get('/:id')
   getHotel(@Param('id') id: string) {
     return this.hotelService.findOne(parseInt(id));
+  }
+
+  @Get('/:id/rooms')
+  getHotelRooms(@Param('id') id: string) {
+    return this.roomsService.findMany({ hotel: parseInt(id) });
   }
 
   @Post()
