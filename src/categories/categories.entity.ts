@@ -6,12 +6,10 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToMany,
-  ManyToOne,
 } from 'typeorm';
 
 @Entity()
-export class Room {
+export class Category {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,32 +17,41 @@ export class Room {
   hotel: number;
 
   @Column()
-  roomNumber: string;
+  name: string;
 
   @Column()
-  roomCategory: number;
+  balcony: boolean;
 
   @Column()
-  size: number;
+  bathtub: boolean;
 
   @Column()
-  smoking: boolean;
+  shower: boolean;
 
   @Column()
-  pets: boolean;
+  view: string;
+
+  @Column()
+  adults: number;
+
+  @Column()
+  children: number;
+
+  @Column()
+  price: number;
 
   @AfterInsert()
   logInsert() {
-    console.log('Inserted Room with id', this.id);
+    console.log('Inserted Room Category with id', this.id);
   }
 
   @AfterUpdate()
   logUpdate() {
-    console.log('Updated Room with id', this.id);
+    console.log('Updated Room Category with id', this.id);
   }
 
   @AfterRemove()
   logRemove() {
-    console.log('Removed Room with id', this.id);
+    console.log('Removed Room Category with id', this.id);
   }
 }

@@ -1,30 +1,21 @@
 import { IsBoolean, IsNumber, IsString } from 'class-validator';
 
 export class CreateRoomDto {
-  @IsString()
+  @IsNumber()
   hotel: number;
 
   @IsString()
-  name: string;
-
-  @IsBoolean()
-  balcony: boolean;
-
-  @IsBoolean()
-  bathtub: boolean;
-
-  @IsBoolean()
-  shower: boolean;
-
-  @IsString()
-  view: string;
+  roomNumber: string;
 
   @IsNumber()
-  adults: number;
+  roomCategory: number;
 
   @IsNumber()
-  children: number;
+  size: number;
 
-  @IsNumber()
-  price: number;
+  @IsBoolean()
+  smoking: boolean;
+
+  @IsBoolean()
+  pets: boolean;
 }

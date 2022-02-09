@@ -24,9 +24,17 @@ _(this is a hobby project to learn NestJS)_
   - [x] add "number of rooms" to `GET /hotels/:id`
   - [ ] implement `/:id/rooms/categories` after basic `/rooms` route is created
 - [x] Develop `/rooms` route
-- [ ] Develop `/rooms/categories` route
+- [ ] ~~Develop `/rooms/categories` route~~
+- [x] Develop `/categories` route
 - [ ] Develop `/reservations` route
 - [ ] Develop `/guests` route
+- [ ] Set up typeorm relations (after research)
+  - [ ] rooms - hotels
+  - [ ] rooms - roomCategories
+  - [ ] roomCategories - hotels
+  - [ ] reservations - roomCategories
+  - [ ] rooms - reservations
+  - [ ] guests - reservations
 - [ ] Strategy for date availability checker
 - [ ] Integrate authentication
 - [ ] Connect with Webflow API (as database option)

@@ -1,39 +1,27 @@
 import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UpdateRoomDto {
-  @IsString()
+  @IsNumber()
   @IsOptional()
   hotel: number;
 
   @IsString()
   @IsOptional()
-  name: string;
-
-  @IsBoolean()
-  @IsOptional()
-  balcony: boolean;
-
-  @IsBoolean()
-  @IsOptional()
-  bathtub: boolean;
-
-  @IsBoolean()
-  @IsOptional()
-  shower: boolean;
-
-  @IsString()
-  @IsOptional()
-  view: string;
+  roomNumber: string;
 
   @IsNumber()
   @IsOptional()
-  adults: number;
+  roomCategory: number;
 
   @IsNumber()
   @IsOptional()
-  children: number;
+  size: number;
 
-  @IsNumber()
+  @IsBoolean()
   @IsOptional()
-  price: number;
+  smoking: boolean;
+
+  @IsBoolean()
+  @IsOptional()
+  pets: boolean;
 }

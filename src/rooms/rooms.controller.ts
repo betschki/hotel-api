@@ -16,12 +16,12 @@ export class RoomsController {
   constructor(private roomsService: RoomsService) {}
 
   @Get()
-  getHotels() {
+  getRooms() {
     return this.roomsService.find();
   }
 
   @Get('/:id')
-  getHotel(@Param('id') id: string) {
+  getRoom(@Param('id') id: string) {
     return this.roomsService.findOne(parseInt(id));
   }
 

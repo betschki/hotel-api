@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="FFv0Rk26pUSp2y-IaZdf" name="Page-1">
-        <mxGraphModel dx="738" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="488" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -37,13 +37,7 @@
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-11" target="sKO1wdGzVSiYKihAOpJU-12" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="sKO1wdGzVSiYKihAOpJU-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-11" target="sKO1wdGzVSiYKihAOpJU-28" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-12" target="sKO1wdGzVSiYKihAOpJU-18" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="sKO1wdGzVSiYKihAOpJU-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-12" target="sKO1wdGzVSiYKihAOpJU-28" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-12" value="Rooms Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -70,29 +64,26 @@
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-28" target="sKO1wdGzVSiYKihAOpJU-34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="sKO1wdGzVSiYKihAOpJU-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-28" target="sKO1wdGzVSiYKihAOpJU-12" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="sKO1wdGzVSiYKihAOpJU-28" value="RoomCategories Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="240" width="260" height="30" as="geometry"/>
+                <mxCell id="sKO1wdGzVSiYKihAOpJU-28" value="Categories Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="635" y="240" width="260" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="sKO1wdGzVSiYKihAOpJU-30" target="sKO1wdGzVSiYKihAOpJU-34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-30" value="POST /categories (createCategory)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="360" width="260" height="20" as="geometry"/>
+                    <mxGeometry x="635" y="360" width="260" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-31" value="GET /categories/:id (getCategory)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="340" width="260" height="20" as="geometry"/>
+                    <mxGeometry x="635" y="340" width="260" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-32" value="PATCH /categories/:id (updateCategory)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="380" width="260" height="20" as="geometry"/>
+                    <mxGeometry x="635" y="380" width="260" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-33" value="DELETE /categories/:id (deleteCategory)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="400" width="260" height="20" as="geometry"/>
+                    <mxGeometry x="635" y="400" width="260" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-34" value="GET /categories (getCategories)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="320" width="260" height="20" as="geometry"/>
+                    <mxGeometry x="635" y="320" width="260" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-36" target="sKO1wdGzVSiYKihAOpJU-94" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -113,6 +104,9 @@
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="220" y="70" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sKO1wdGzVSiYKihAOpJU-36" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-36" value="API /" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="840" y="10" width="120" height="50" as="geometry"/>
@@ -183,10 +177,8 @@
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-88" value="GET /:id/rooms (getReservationRooms)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="965" y="420" width="280" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-89" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="350" y="295" as="targetPoint"/>
-                    </mxGeometry>
+                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sKO1wdGzVSiYKihAOpJU-89" target="sKO1wdGzVSiYKihAOpJU-90">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-89" value="Hotel Module" style="swimlane;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="60" y="120" width="240" height="370" as="geometry"/>
@@ -197,27 +189,33 @@
                 <mxCell id="5" value="GET /:id/roomCategories (getHotelRoomCategories)" style="rounded=0;whiteSpace=wrap;html=1;" parent="sKO1wdGzVSiYKihAOpJU-89" vertex="1">
                     <mxGeometry x="20" y="320" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="sKO1wdGzVSiYKihAOpJU-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="sKO1wdGzVSiYKihAOpJU-89" edge="1">
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sKO1wdGzVSiYKihAOpJU-90" target="7">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="350" y="295" as="sourcePoint"/>
+                        <mxPoint x="650" y="560" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="sKO1wdGzVSiYKihAOpJU-90" target="sKO1wdGzVSiYKihAOpJU-92">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sKO1wdGzVSiYKihAOpJU-90" target="sKO1wdGzVSiYKihAOpJU-92">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1090" y="570" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="470" y="520"/>
+                            <mxPoint x="1105" y="520"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-90" value="Rooms Module" style="swimlane;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="350" y="120" width="540" height="320" as="geometry"/>
+                    <mxGeometry x="350" y="120" width="240" height="320" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-11" value="Rooms Controller /rooms" style="rounded=0;whiteSpace=wrap;html=1;" parent="sKO1wdGzVSiYKihAOpJU-90" vertex="1">
-                    <mxGeometry x="140" y="50" width="200" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="sKO1wdGzVSiYKihAOpJU-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-92" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="890" y="290.1111111111111" as="targetPoint"/>
-                    </mxGeometry>
+                    <mxGeometry x="20" y="50" width="200" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="sKO1wdGzVSiYKihAOpJU-92" target="sKO1wdGzVSiYKihAOpJU-94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="sKO1wdGzVSiYKihAOpJU-92" target="7">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="810" y="520" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-92" value="Reservations Module" style="swimlane;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="945" y="120" width="320" height="340" as="geometry"/>
@@ -227,6 +225,22 @@
                 </mxCell>
                 <mxCell id="sKO1wdGzVSiYKihAOpJU-94" value="Guests Module" style="swimlane;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1320" y="120" width="320" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="sKO1wdGzVSiYKihAOpJU-90">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="490" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Categories Module" style="swimlane;rounded=0;startSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="610" y="120" width="310" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Categories Controller /categories" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="7">
+                    <mxGeometry x="30" y="50" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="765" y="240" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
