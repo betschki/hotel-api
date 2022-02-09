@@ -22,7 +22,7 @@ _(this is a hobby project to learn NestJS)_
   - [x] split `address` into address Object instead of string
   - [x] implement `/:id/rooms` after basic `/rooms` route is created
   - [x] add "number of rooms" to `GET /hotels/:id`
-  - [ ] implement `/:id/rooms/categories` after basic `/rooms` route is created
+  - [x] implement `/:id/categories` after basic `/categories` route is created
 - [x] Develop `/rooms` route
 - [ ] ~~Develop `/rooms/categories` route~~
 - [x] Develop `/categories` route

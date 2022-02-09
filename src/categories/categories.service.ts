@@ -12,6 +12,10 @@ export class CategoriesService {
     return this.repo.find();
   }
 
+  findMany(params: Partial<Category>) {
+    return this.repo.find(params);
+  }
+
   async findOne(id) {
     const category = await this.repo.findOne(id);
     if (!category) {
