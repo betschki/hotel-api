@@ -16,7 +16,7 @@ export class RoomsService {
     return this.repo.find(params);
   }
 
-  async findOne(id) {
+  async findOne(id: number) {
     const room = await this.repo.findOne(id);
     if (!room) {
       throw new NotFoundException(`Room with id ${id} not found.`);

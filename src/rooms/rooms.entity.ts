@@ -1,4 +1,3 @@
-import { Hotel } from 'src/hotels/hotels.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -6,8 +5,6 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToMany,
-  ManyToOne,
 } from 'typeorm';
 
 @Entity()

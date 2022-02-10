@@ -10,13 +10,14 @@ import { Hotel } from './hotels/hotels.entity';
 import { Room } from './rooms/rooms.entity';
 import { CategoriesModule } from './categories/categories.module';
 import { Category } from './categories/categories.entity';
+import { Reservation } from './reservations/reservations.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: [Hotel, Room, Category],
+      entities: [Hotel, Room, Category, Reservation],
       synchronize: true,
     }),
     HotelsModule,
