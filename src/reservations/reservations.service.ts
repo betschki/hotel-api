@@ -17,9 +17,12 @@ export class ReservationsService {
     return this.repo.find();
   }
 
+  findMany(params: Partial<Reservation>) {
+    return this.repo.find(params);
+  }
+
   async findRooms(id: number) {
     const reservation = await this.repo.findOne(id);
-
     if (!reservation) {
       throw new NotFoundException(`Reservation with id ${id} not found`);
     }
