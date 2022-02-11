@@ -24,10 +24,9 @@ _(this is a hobby project to learn NestJS)_
   - [x] add "number of rooms" to `GET /hotels/:id`
   - [x] implement `/:id/categories` after basic `/categories` route is created
 - [x] Develop `/rooms` route
-- ~~[ ] Develop `/rooms/categories` route~~
 - [x] Develop `/categories` route
 - [x] Develop `/reservations` route
-  - [ ] add `/:id/rooms` route
+  - [x] add `/:id/rooms` route
 - [ ] Develop `/guests` route
 - [ ] Set up typeorm relations (after research)
   - [ ] rooms - hotels

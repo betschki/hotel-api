@@ -14,10 +14,7 @@ import { ReservationsService } from './reservations.service';
 
 @Controller('reservations')
 export class ReservationsController {
-  constructor(
-    private reservationsService: ReservationsService,
-    private roomsService: RoomsService,
-  ) {}
+  constructor(private reservationsService: ReservationsService) {}
 
   @Get()
   getReservations() {
@@ -29,10 +26,10 @@ export class ReservationsController {
     return this.reservationsService.findOne(parseInt(id));
   }
 
-  //   @Get('/:id/rooms')
-  //   getReservationRooms(@Param('id') id: string) {
-  //     return this.roomsService.findMany({parseInt(id)});
-  //   }
+  @Get('/:id/rooms')
+  getReservationRooms(@Param('id') id: string) {
+    return this.reservationsService.findRooms(parseInt(id));
+  }
 
   @Post()
   createReservation(@Body() body: CreateReservationDto) {
