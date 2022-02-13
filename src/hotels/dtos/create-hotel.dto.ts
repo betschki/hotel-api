@@ -1,5 +1,12 @@
-import { IsNumber, IsObject, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsNumber,
+  IsObject,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 import { Address } from 'src/common/interfaces/address.interface';
+import { Room } from 'src/rooms/rooms.entity';
 
 export class CreateHotelDto {
   @IsString()
@@ -10,4 +17,8 @@ export class CreateHotelDto {
 
   @IsObject()
   address: Address;
+
+  @IsArray()
+  @IsOptional()
+  rooms: Room[];
 }

@@ -1,8 +1,9 @@
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { Hotel } from 'src/hotels/hotels.entity';
 
 export class CreateRoomDto {
   @IsNumber()
-  hotel: number;
+  hotel: Hotel;
 
   @IsString()
   roomNumber: string;

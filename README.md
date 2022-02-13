@@ -21,7 +21,7 @@ _(this is a hobby project to learn NestJS)_
 - [x] Develop `/hotels` route
   - [x] split `address` into address Object instead of string
   - [x] implement `/:id/rooms` after basic `/rooms` route is created
-  - [x] add "number of rooms" to `GET /hotels/:id`
+  - [ ] add "number of rooms" to `GET /hotels/:id`
   - [x] implement `/:id/categories` after basic `/categories` route is created
 - [x] Develop `/rooms` route
 - [x] Develop `/categories` route
@@ -29,13 +29,19 @@ _(this is a hobby project to learn NestJS)_
   - [x] add `/:id/rooms` route
 - [x] Develop `/guests` route
   - [x] add `/:id/reservations`
-- [ ] Set up typeorm relations (after research)
-  - [ ] rooms - hotels
-  - [ ] rooms - roomCategories
-  - [ ] roomCategories - hotels
-  - [ ] reservations - roomCategories
-  - [ ] rooms - reservations
-  - [ ] guests - reservations
+- [ ] Set up typeorm relations
+  - [x] hotel --> rooms (OneToMany)
+  - [x] rooms --> hotels (ManyToOne)
+  - [ ] categories --> rooms (ManyToOne)
+  - [ ] rooms --> categories (OneToMany)
+  - [ ] hotel --> cateogies (ManyToOne)
+  - [ ] categories --> hotels (OneToMany)
+  - [ ] reservations --> categories (ManyToMany)
+  - [ ] categories --> reservations (ManyToMany)
+  - [ ] reservations --> rooms (ManyToMany)
+  - [ ] rooms --> reservations (ManyToMany)
+  - [ ] reservations --> guest (ManyToOne)
+  - [ ] guest --> reservations (OneToMany)
 - [ ] Strategy for date availability checker
 - [ ] Integrate authentication
 - [ ] Connect with Webflow API (as database option)

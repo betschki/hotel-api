@@ -24,6 +24,9 @@ export class Hotel {
   @Column('simple-json')
   address: Address;
 
+  @OneToMany(() => Room, (room) => room.hotel)
+  rooms: Room[];
+
   @AfterInsert()
   logInsert() {
     console.log('Inserted Hotel with id', this.id);

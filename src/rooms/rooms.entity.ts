@@ -1,3 +1,4 @@
+import { Hotel } from 'src/hotels/hotels.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -5,6 +6,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity()
@@ -12,8 +14,8 @@ export class Room {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  hotel: number;
+  @ManyToOne(() => Hotel, (hotel) => hotel.rooms)
+  hotel: Hotel;
 
   @Column()
   roomNumber: string;

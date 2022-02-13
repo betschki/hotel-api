@@ -1,18 +1,21 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  forwardRef,
+  Inject,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Address } from 'src/common/interfaces/address.interface';
+import { Room } from 'src/rooms/rooms.entity';
 import { RoomsService } from 'src/rooms/rooms.service';
 import { Repository } from 'typeorm';
 import { Hotel } from './hotels.entity';
-
-interface HotelWithRooms extends Hotel {
-  rooms: number;
-}
 
 @Injectable()
 export class HotelsService {
   constructor(
     @InjectRepository(Hotel) private repo: Repository<Hotel>,
+    @Inject(forwardRef(() => RoomsService))
     private roomsService: RoomsService,
   ) {}
 
@@ -22,9 +25,11 @@ export class HotelsService {
 
   async findOne(id: number) {
     const hotel: any = await this.repo.findOne(id);
-    hotel.rooms = (await this.roomsService.findMany({ hotel: id })).length;
+    if (!hotel) {
+      throw new NotFoundException(`Hotel with id ${id} not found`);
+    }
 
-    return hotel;
+    return hotel as Hotel;
   }
 
   create(name: string, stars: number, address: Address) {
@@ -50,6 +55,8 @@ export class HotelsService {
       throw new NotFoundException(`Hotel with id ${id} not found`);
     }
 
-    return this.repo.remove(hotel);
+    this.repo.remove(hotel);
+
+    return `Hotel with id ${id} removed successfully`;
   }
 }

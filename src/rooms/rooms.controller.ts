@@ -7,13 +7,18 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { Hotel } from 'src/hotels/hotels.entity';
+import { HotelsService } from 'src/hotels/hotels.service';
 import { CreateRoomDto } from './dtos/create-room.dto';
 import { UpdateRoomDto } from './dtos/update-room.dto';
 import { RoomsService } from './rooms.service';
 
 @Controller('rooms')
 export class RoomsController {
-  constructor(private roomsService: RoomsService) {}
+  constructor(
+    private roomsService: RoomsService,
+    private hotelsService: HotelsService,
+  ) {}
 
   @Get()
   getRooms() {
@@ -26,9 +31,9 @@ export class RoomsController {
   }
 
   @Post()
-  async createRoom(@Body() body: CreateRoomDto) {
-    const room = await this.roomsService.create(body);
-    return room;
+  async createRoom(@Body() body: any) {
+    const hotel = await this.hotelsService.findOne(body.hotel);
+    return await this.roomsService.create(body, hotel);
   }
 
   @Patch('/:id')

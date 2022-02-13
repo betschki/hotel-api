@@ -1,9 +1,10 @@
 import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { Hotel } from 'src/hotels/hotels.entity';
 
 export class UpdateRoomDto {
   @IsNumber()
   @IsOptional()
-  hotel: number;
+  hotel: Hotel;
 
   @IsString()
   @IsOptional()

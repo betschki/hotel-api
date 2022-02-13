@@ -11,6 +11,7 @@ import { CategoriesService } from 'src/categories/categories.service';
 import { RoomsService } from 'src/rooms/rooms.service';
 import { CreateHotelDto } from './dtos/create-hotel.dto';
 import { UpdateHotelDto } from './dtos/update-hotel.dto';
+import { Hotel } from './hotels.entity';
 import { HotelsService } from './hotels.service';
 
 @Controller('/hotels')
@@ -32,8 +33,9 @@ export class HotelsController {
   }
 
   @Get('/:id/rooms')
-  getHotelRooms(@Param('id') id: string) {
-    return this.roomsService.findMany({ hotel: parseInt(id) });
+  async getHotelRooms(@Param('id') id: string) {
+    const hotel: Hotel = await this.hotelService.findOne(parseInt(id));
+    return this.roomsService.findMany({ hotel: hotel });
   }
 
   @Get('/:id/categories')
