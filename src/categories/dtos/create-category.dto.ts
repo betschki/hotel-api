@@ -1,4 +1,11 @@
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsBoolean,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { Room } from 'src/rooms/rooms.entity';
 
 export class CreateCategoryDto {
   @IsString()
@@ -27,4 +34,8 @@ export class CreateCategoryDto {
 
   @IsNumber()
   price: number;
+
+  @IsArray()
+  @IsOptional()
+  rooms: Room[];
 }

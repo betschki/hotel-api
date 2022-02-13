@@ -5,19 +5,15 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Category } from 'src/categories/categories.entity';
 import { Hotel } from 'src/hotels/hotels.entity';
-import { HotelsService } from 'src/hotels/hotels.service';
 import { Repository } from 'typeorm';
 import { CreateRoomDto } from './dtos/create-room.dto';
 import { Room } from './rooms.entity';
 
 @Injectable()
 export class RoomsService {
-  constructor(
-    @InjectRepository(Room) private repo: Repository<Room>,
-    @Inject(forwardRef(() => HotelsService))
-    private hotelsService: HotelsService,
-  ) {}
+  constructor(@InjectRepository(Room) private repo: Repository<Room>) {}
 
   find() {
     return this.repo.find();
@@ -36,9 +32,11 @@ export class RoomsService {
     return room;
   }
 
-  async create(room: CreateRoomDto, hotel: Hotel) {
+  async create(room: CreateRoomDto, hotel: Hotel, category: Category) {
     room.hotel = hotel;
+    room.roomCategory = category;
     const newRoom = await this.repo.create(room);
+    console.log(room, hotel, category, newRoom);
 
     return this.repo.save(newRoom);
   }

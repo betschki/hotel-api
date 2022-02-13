@@ -1,4 +1,5 @@
 import { Hotel } from 'src/hotels/hotels.entity';
+import { Room } from 'src/rooms/rooms.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -6,6 +7,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
@@ -39,6 +41,9 @@ export class Category {
 
   @Column()
   price: number;
+
+  @OneToMany(() => Room, (room) => room.roomCategory)
+  rooms: Room[];
 
   @AfterInsert()
   logInsert() {

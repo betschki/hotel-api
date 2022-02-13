@@ -16,13 +16,13 @@ export class CategoriesService {
     return this.repo.find(params);
   }
 
-  async findOne(id) {
-    const category = await this.repo.findOne(id);
+  async findOne(id: number) {
+    const category: any = await this.repo.findOne(id);
     if (!category) {
       throw new NotFoundException(`Room Category with id ${id} not found.`);
     }
 
-    return category;
+    return category as Category;
   }
 
   create(category: CreateCategoryDto) {

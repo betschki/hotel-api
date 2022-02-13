@@ -1,3 +1,4 @@
+import { Category } from 'src/categories/categories.entity';
 import { Hotel } from 'src/hotels/hotels.entity';
 import {
   AfterInsert,
@@ -7,6 +8,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   ManyToOne,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
@@ -20,8 +22,8 @@ export class Room {
   @Column()
   roomNumber: string;
 
-  @Column()
-  roomCategory: number;
+  @ManyToOne(() => Category, (category) => category.rooms)
+  roomCategory: Category;
 
   @Column()
   size: number;

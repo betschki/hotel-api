@@ -1,4 +1,11 @@
-import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsBoolean,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { Room } from 'src/rooms/rooms.entity';
 
 export class UpdateCategoryDto {
   @IsString()
@@ -36,4 +43,8 @@ export class UpdateCategoryDto {
   @IsNumber()
   @IsOptional()
   price: number;
+
+  @IsArray()
+  @IsOptional()
+  rooms: Room[];
 }

@@ -29,11 +29,11 @@ _(this is a hobby project to learn NestJS)_
   - [x] add `/:id/rooms` route
 - [x] Develop `/guests` route
   - [x] add `/:id/reservations`
-- [ ] Set up typeorm relations
+- [ ] Set up typeorm relations (`POST`)
   - [x] hotel --> rooms (OneToMany)
   - [x] rooms --> hotels (ManyToOne)
-  - [ ] categories --> rooms (ManyToOne)
-  - [ ] rooms --> categories (OneToMany)
+  - [x] categories --> rooms (OneToMany)
+  - [x] rooms --> categories (ManyToOne)
   - [ ] hotel --> cateogies (ManyToOne)
   - [ ] categories --> hotels (OneToMany)
   - [ ] reservations --> categories (ManyToMany)
@@ -42,6 +42,14 @@ _(this is a hobby project to learn NestJS)_
   - [ ] rooms --> reservations (ManyToMany)
   - [ ] reservations --> guest (ManyToOne)
   - [ ] guest --> reservations (OneToMany)
+- [ ] Set up typeorm relations for `PATCH` methods
+  - [ ] `/hotels`
+  - [ ] `/rooms`
+  - [ ] `/categories`
+  - [ ] `/reservations`
+  - [ ] `/guests`
+- [ ] add validation that `POST /rooms` can only contain `roomCategory` that belongs to `hotel` in request
+- [ ] add validation that roomNumbers cannot be used multiple times in same hotel
 - [ ] Strategy for date availability checker
 - [ ] Integrate authentication
 - [ ] Connect with Webflow API (as database option)

@@ -6,18 +6,12 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Address } from 'src/common/interfaces/address.interface';
-import { Room } from 'src/rooms/rooms.entity';
-import { RoomsService } from 'src/rooms/rooms.service';
 import { Repository } from 'typeorm';
 import { Hotel } from './hotels.entity';
 
 @Injectable()
 export class HotelsService {
-  constructor(
-    @InjectRepository(Hotel) private repo: Repository<Hotel>,
-    @Inject(forwardRef(() => RoomsService))
-    private roomsService: RoomsService,
-  ) {}
+  constructor(@InjectRepository(Hotel) private repo: Repository<Hotel>) {}
 
   find() {
     return this.repo.find();

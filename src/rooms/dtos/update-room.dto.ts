@@ -1,4 +1,5 @@
 import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { Category } from 'src/categories/categories.entity';
 import { Hotel } from 'src/hotels/hotels.entity';
 
 export class UpdateRoomDto {
@@ -12,7 +13,7 @@ export class UpdateRoomDto {
 
   @IsNumber()
   @IsOptional()
-  roomCategory: number;
+  roomCategory: Category;
 
   @IsNumber()
   @IsOptional()
