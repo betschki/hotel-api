@@ -9,6 +9,7 @@ import { HotelsService } from './hotels.service';
 @Module({
   imports: [
     forwardRef(() => RoomsModule),
+    forwardRef(() => CategoriesModule),
     CategoriesModule,
     TypeOrmModule.forFeature([Hotel]),
   ],

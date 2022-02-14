@@ -39,8 +39,9 @@ export class HotelsController {
   }
 
   @Get('/:id/categories')
-  getHotelCategories(@Param('id') id: string) {
-    return this.categoriesService.findMany({ hotel: parseInt(id) });
+  async getHotelCategories(@Param('id') id: string) {
+    const hotel: Hotel = await this.hotelService.findOne(parseInt(id));
+    return this.categoriesService.findMany({ hotel: hotel });
   }
 
   @Post()

@@ -5,12 +5,12 @@ import {
   IsOptional,
   IsString,
 } from 'class-validator';
+import { Hotel } from 'src/hotels/hotels.entity';
 import { Room } from 'src/rooms/rooms.entity';
 
 export class UpdateCategoryDto {
-  @IsString()
   @IsOptional()
-  hotel: number;
+  hotel: Hotel;
 
   @IsString()
   @IsOptional()

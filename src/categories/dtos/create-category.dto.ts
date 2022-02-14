@@ -1,15 +1,17 @@
 import {
   IsArray,
   IsBoolean,
+  IsDefined,
   IsNumber,
   IsOptional,
   IsString,
 } from 'class-validator';
+import { Hotel } from 'src/hotels/hotels.entity';
 import { Room } from 'src/rooms/rooms.entity';
 
 export class CreateCategoryDto {
-  @IsString()
-  hotel: number;
+  @IsDefined()
+  hotel: Hotel;
 
   @IsString()
   name: string;

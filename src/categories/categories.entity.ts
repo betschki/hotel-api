@@ -8,6 +8,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity()
@@ -15,8 +16,8 @@ export class Category {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  hotel: number;
+  @ManyToOne(() => Hotel, (hotel) => hotel.categories)
+  hotel: Hotel;
 
   @Column()
   name: string;

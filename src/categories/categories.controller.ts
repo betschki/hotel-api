@@ -10,10 +10,14 @@ import {
 import { CreateCategoryDto } from './dtos/create-category.dto';
 import { UpdateCategoryDto } from './dtos/update-category.dto';
 import { CategoriesService } from './categories.service';
+import { HotelsService } from 'src/hotels/hotels.service';
 
 @Controller('categories')
 export class CategoriesController {
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private hotelsService: HotelsService,
+  ) {}
 
   @Get()
   getRoomCategories() {
@@ -26,8 +30,9 @@ export class CategoriesController {
   }
 
   @Post()
-  createRoomCategory(@Body() body: CreateCategoryDto) {
-    return this.categoriesService.create(body);
+  async createRoomCategory(@Body() body: any) {
+    const hotel = await this.hotelsService.findOne(body.hotel);
+    return this.categoriesService.create(body, hotel);
   }
 
   @Patch('/:id')

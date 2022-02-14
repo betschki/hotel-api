@@ -1,3 +1,4 @@
+import { Category } from 'src/categories/categories.entity';
 import { Address } from 'src/common/interfaces/address.interface';
 import { Room } from 'src/rooms/rooms.entity';
 import {
@@ -26,6 +27,9 @@ export class Hotel {
 
   @OneToMany(() => Room, (room) => room.hotel)
   rooms: Room[];
+
+  @OneToMany(() => Category, (category) => category.hotel)
+  categories: Category[];
 
   @AfterInsert()
   logInsert() {
