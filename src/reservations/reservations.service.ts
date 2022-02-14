@@ -32,7 +32,7 @@ export class ReservationsService {
     const roomArray: Room[] = [];
 
     for (let i = 0; i < rooms.length; i++) {
-      roomArray.push(await this.roomsService.findOne(rooms[i]));
+      roomArray.push(await this.roomsService.findOne(rooms[i].id));
     }
 
     return roomArray;

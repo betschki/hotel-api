@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { Category } from 'src/categories/categories.entity';
 import { CategoriesService } from 'src/categories/categories.service';
+import { Room } from 'src/rooms/rooms.entity';
 import { RoomsService } from 'src/rooms/rooms.service';
 import { CreateReservationDto } from './dtos/create-reservation.dto';
 import { UpdateReservationDto } from './dtos/update-reservation.dto';
@@ -19,6 +20,7 @@ export class ReservationsController {
   constructor(
     private reservationsService: ReservationsService,
     private categoriesService: CategoriesService,
+    private roomsService: RoomsService,
   ) {}
 
   @Get()
@@ -39,6 +41,7 @@ export class ReservationsController {
   @Post()
   async createReservation(@Body() body: any) {
     const categories: Category[] = [];
+    const rooms: Room[] = [];
 
     for (let i = 0; i < body.roomCategories.length; i++) {
       categories.push(
@@ -46,7 +49,12 @@ export class ReservationsController {
       );
     }
 
+    for (let i = 0; i < body.rooms.length; i++) {
+      rooms.push(await this.roomsService.findOne(body.rooms[i]));
+    }
+
     body.roomCategories = categories;
+    body.rooms = rooms;
 
     return this.reservationsService.create(body);
   }

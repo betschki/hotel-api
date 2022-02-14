@@ -6,6 +6,7 @@ import {
   IsOptional,
 } from 'class-validator';
 import { Category } from 'src/categories/categories.entity';
+import { Room } from 'src/rooms/rooms.entity';
 
 export class CreateReservationDto {
   @IsNumber()
@@ -19,7 +20,7 @@ export class CreateReservationDto {
 
   @IsArray()
   @IsOptional()
-  rooms: number[];
+  rooms: Room[];
 
   @IsDate()
   arrival: Date;

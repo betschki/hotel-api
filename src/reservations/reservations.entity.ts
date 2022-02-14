@@ -1,4 +1,6 @@
+import { IsOptional } from 'class-validator';
 import { Category } from 'src/categories/categories.entity';
+import { Room } from 'src/rooms/rooms.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -25,8 +27,10 @@ export class Reservation {
   @JoinTable()
   roomCategories: Category[];
 
-  @Column('simple-array')
-  rooms: number[];
+  @ManyToMany(() => Room)
+  @JoinTable()
+  @IsOptional()
+  rooms: Room[];
 
   @Column()
   arrival: Date;

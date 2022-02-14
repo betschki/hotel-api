@@ -38,8 +38,8 @@ _(this is a hobby project to learn NestJS)_
   - [x] categories --> hotels (ManyToOne)
   - [x] reservations --> categories (ManyToMany)
   - [x] categories --> reservations (ManyToMany)
-  - [ ] reservations --> rooms (ManyToMany)
-  - [ ] rooms --> reservations (ManyToMany)
+  - [x] reservations --> rooms (ManyToMany)
+  - [x] rooms --> reservations (ManyToMany)
   - [ ] reservations --> guest (ManyToOne)
   - [ ] guest --> reservations (OneToMany)
 - [ ] Set up typeorm relations for `PATCH` methods
