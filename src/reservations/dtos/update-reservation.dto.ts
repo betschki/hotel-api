@@ -5,6 +5,7 @@ import {
   IsNumber,
   IsOptional,
 } from 'class-validator';
+import { Category } from 'src/categories/categories.entity';
 
 export class UpdateReservationDto {
   @IsNumber()
@@ -17,7 +18,7 @@ export class UpdateReservationDto {
 
   @IsArray()
   @IsOptional()
-  roomCategories: number[];
+  roomCategories: Category[];
 
   @IsArray()
   @IsOptional()

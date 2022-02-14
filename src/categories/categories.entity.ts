@@ -1,4 +1,5 @@
 import { Hotel } from 'src/hotels/hotels.entity';
+import { Reservation } from 'src/reservations/reservations.entity';
 import { Room } from 'src/rooms/rooms.entity';
 import {
   AfterInsert,
@@ -9,6 +10,8 @@ import {
   PrimaryGeneratedColumn,
   OneToMany,
   ManyToOne,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 
 @Entity()
@@ -45,6 +48,10 @@ export class Category {
 
   @OneToMany(() => Room, (room) => room.roomCategory)
   rooms: Room[];
+
+  @ManyToMany(() => Reservation)
+  @JoinTable()
+  reservations: Reservation[];
 
   @AfterInsert()
   logInsert() {

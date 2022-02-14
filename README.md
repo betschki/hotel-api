@@ -36,8 +36,8 @@ _(this is a hobby project to learn NestJS)_
   - [x] rooms --> categories (ManyToOne)
   - [x] hotel --> cateogies (OneToMany)
   - [x] categories --> hotels (ManyToOne)
-  - [ ] reservations --> categories (ManyToMany)
-  - [ ] categories --> reservations (ManyToMany)
+  - [x] reservations --> categories (ManyToMany)
+  - [x] categories --> reservations (ManyToMany)
   - [ ] reservations --> rooms (ManyToMany)
   - [ ] rooms --> reservations (ManyToMany)
   - [ ] reservations --> guest (ManyToOne)
@@ -48,6 +48,7 @@ _(this is a hobby project to learn NestJS)_
   - [ ] `/categories`
   - [ ] `/reservations`
   - [ ] `/guests`
+- [ ] add Swagger for API documentation
 - [ ] add validation that `POST /rooms` can only contain `roomCategory` that belongs to `hotel` in request
 - [ ] add validation that roomNumbers cannot be used multiple times in same hotel
 - [ ] Strategy for date availability checker

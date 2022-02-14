@@ -1,3 +1,4 @@
+import { Category } from 'src/categories/categories.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -5,6 +6,8 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 
 @Entity()
@@ -18,8 +21,9 @@ export class Reservation {
   @Column()
   hotel: number;
 
-  @Column('simple-array')
-  roomCategories: number[];
+  @ManyToMany(() => Category)
+  @JoinTable()
+  roomCategories: Category[];
 
   @Column('simple-array')
   rooms: number[];

@@ -11,6 +11,7 @@ import { CreateCategoryDto } from './dtos/create-category.dto';
 import { UpdateCategoryDto } from './dtos/update-category.dto';
 import { CategoriesService } from './categories.service';
 import { HotelsService } from 'src/hotels/hotels.service';
+import { ReservationsService } from 'src/reservations/reservations.service';
 
 @Controller('categories')
 export class CategoriesController {
